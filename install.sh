@@ -72,7 +72,11 @@ if [[ $platform == 'linux' ]]; then
     echo ""
 fi
 
-chsh -s /bin/zsh
+if [[ $SHELL != '/bin/zsh' ]]; then
+    chsh -s /bin/zsh
+fi
+
+git config --global push.default simple
 
 echo "Don't forget to run :BundleInstall inside vim!"
 
