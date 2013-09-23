@@ -1,0 +1,7 @@
+[color]
+	ui = auto
+[user]
+	name = Bogdan Tkachenko
+	email = bogus.weber@gmail.com
+[core]
+	editor = vim

@@ -31,6 +31,7 @@ rm -rf $HOME/.vim
 rm $HOME/.vimrc
 rm -rf $HOME/.oh-my-zsh
 rm .zshrc
+rm .gitconfig
 
 if [[ $platform == 'linux' ]]; then
     rm -v $HOME/.Xdefaults
@@ -46,6 +47,7 @@ ln -sv $DIR/vimfiles $HOME/.vim
 ln -sv $DIR/vimfiles/vimrc $HOME/.vimrc
 ln -sv $DIR/zshrc $HOME/.zshrc
 ln -sv $DIR/oh-my-zsh $HOME/.oh-my-zsh
+ln -sv $DIR/gitconfig $HOME/.gitconfig
 
 if [[ $platform == 'linux' ]]; then
     ln -sv $DIR/Xdefaults $HOME/.Xdefaults
