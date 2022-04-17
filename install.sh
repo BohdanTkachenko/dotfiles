@@ -18,11 +18,11 @@ function get_distro () {
 }
 
 function install_debian () {
-  sudo apt install -y stow
+  sudo apt install -y curl stow
 }
 
 function install_macos () {
-  brew install stow
+  brew install curl stow
 }
 
 install () {
@@ -37,6 +37,8 @@ install () {
       install_macos
       ;;
   esac
+
+  curl -L git.io/antigen > zsh/.zsh/antigen.zsh
 
   stow zsh
 }
