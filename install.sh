@@ -18,11 +18,11 @@ function get_distro () {
 }
 
 function install_debian () {
-  sudo apt install -y curl stow
+  sudo apt install -y curl stow vim
 }
 
 function install_macos () {
-  brew install curl stow
+  brew install curl stow vim
 }
 
 install () {
@@ -38,9 +38,12 @@ install () {
       ;;
   esac
 
+  git submodule update --init
+
   curl -L git.io/antigen > zsh/.zsh/antigen.zsh
 
   stow zsh
+  stow vim
 }
 
 install
