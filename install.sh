@@ -18,25 +18,24 @@ function get_distro () {
 }
 
 function install_debian () {
-  sudo apt install -y curl stow vim
+  sudo apt install -y zsh curl stow vim
 }
 
 function install_macos () {
-  brew install curl stow vim
+  brew install zsh curl stow vim
 }
 
 install () {
   case $(get_distro) in
-    debian)
-      install_debian
-      ;;
-    ubuntu)
+    debian | ubuntu | pop)
       install_debian
       ;;
     Darwin)
       install_macos
       ;;
   esac
+
+  sudo chsh -s $(which zsh) $USER
 
   git submodule update --init
 
