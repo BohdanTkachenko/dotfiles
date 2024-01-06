@@ -8,6 +8,9 @@ fi
 export ADOTDIR="$HOME/.zsh/antigen"
 source $HOME/.zsh/antigen.zsh
 
+source $HOME/.zsh/env.zsh
+source $HOME/.zsh/aliases.zsh
+
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -29,3 +32,5 @@ antigen apply
 
 # To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
 [[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
+
+export EDITOR=vim
