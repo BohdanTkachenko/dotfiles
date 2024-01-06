@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+case "$1" in
+    push)
+        (cd ~/.dotfiles && git add . && git commit && git push)
+    ;;
+    pull)
+        (cd ~/.dotfiles && git pull)
+    ;;
+    *)
+        echo "Usage $0 <push|pull>"
+    ;;
+esac
+

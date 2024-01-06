@@ -1,0 +1,6 @@
+#compdef dotfiles
+
+local -a subcmds
+subcmds=('pull:Pull latest changes from git' 'push:Add all edit files to commit and push changes to git')
+_describe 'dotfiles' subcmds
+
