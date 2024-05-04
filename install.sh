@@ -41,6 +41,7 @@ install () {
 
   curl -L git.io/antigen > zsh/.zsh/antigen.zsh
 
+  stow bin
   stow zsh
   stow vim
 }
