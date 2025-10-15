@@ -38,6 +38,7 @@
     ./modules/git.nix
     ./modules/gnome.nix
     ./modules/micro.nix
+    ./modules/obsidian
     ./modules/ssh
     ./modules/systemd.nix
     ./modules/tealdeer.nix

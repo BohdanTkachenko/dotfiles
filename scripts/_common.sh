@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -eu
 
+ENV_FILE="$HOME/.config/home-manager.env"
+
+declare -A PROFILES=(
+    [w]="workstation;🖥️  Workstation"
+    [l]="lenovo-z16;💻 Lenovo Z16"
+)
+
 LOG_FILE=/tmp/chezmoi_scripts.log
 LAST_COMMAND_LOG_FILE=/tmp/chezmoi_scripts_last_command.log
 
@@ -14,6 +21,19 @@ COLOR_GREEN='\033[0;32m'
 COLOR_YELLOW='\033[0;33m'
 COLOR_BLUE='\033[0;34m'
 # COLOR_CYAN='\033[0;36m'
+
+if [ -f "$ENV_FILE" ]; then
+    source "$ENV_FILE"
+else
+    echo "❌ [ERROR] Environment file not found at '$ENV_FILE'. Please run the main install.sh script first." >&2
+    exit 1
+fi
+
+# The env file should define this variable.
+if [ -z "${HOME_MANAGER_DIR:-}" ]; then
+    echo "❌ [ERROR] HOME_MANAGER_DIR is not set in '$ENV_FILE'. The file might be corrupt." >&2
+    exit 1
+fi
 
 # A simple, unified logger.
 # Usage:

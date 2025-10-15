@@ -2,5 +2,5 @@
 set -eu
 
 for script in $HOME_MANAGER_DIR/scripts/_bootstrap_*.sh; do
-  "$script"
+  . "$script"
 done
